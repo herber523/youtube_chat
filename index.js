@@ -4,13 +4,16 @@ const BrowserWindow = electron.BrowserWindow
 let mainWindow
 
 function createWindow () {
-    mainWindow = new BrowserWindow({width: 250, height: 400, transparent:true,frame:false});
+    mainWindow = new BrowserWindow({width: 800, height: 600, transparent:true,frame:false});
     mainWindow.setAlwaysOnTop(true)
-    mainWindow.loadURL('file://' + __dirname + '/chat.html');
+    mainWindow.loadURL('file://' + __dirname + '/index.html');
+    mainWindow.webContents.openDevTools()
     mainWindow.on('closed', function () {
         mainWindow = null
     });
 }
+
+global.info = {url: null,size: null};
 
 app.on('ready', createWindow)
 

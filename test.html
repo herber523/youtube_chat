@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+  </body>
+
+  <script>
+  const remote = require('electron').remote;
+  var a =remote.getGlobal('sharedObj').prop1;
+  document.write(a);
+  </script>
+
+</html>

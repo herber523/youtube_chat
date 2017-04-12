@@ -1,13 +1,90 @@
 <haed>
 <script>
-  const remote = require('electron').remote;
-  const BrowserWindow = remote.BrowserWindow;
-  mainWindow = new BrowserWindow({width: 250, height: 400, transparent:true,frame:false});
-  mainWindow.setAlwaysOnTop(true)
-  mainWindow.loadURL('file://' + __dirname + '/chat.html');
+function submit() {
+  var url = document.getElementById("url").value;
+  if(url == ''){
+    alert('url error');
+  }
+  else{
+    const remote = require('electron').remote;
+    remote.getGlobal('info').url = url;
+    const BrowserWindow = remote.BrowserWindow;
+    mainWindow = new BrowserWindow({width: 250, height: 400, transparent:true,frame:false});
+    mainWindow.setAlwaysOnTop(true)
+    mainWindow.webContents.openDevTools()
+    mainWindow.loadURL('file://' + __dirname + '/chat.html');
+    var window = remote.getCurrentWindow();
+    window.close();
+  }
+}
 </script>
+<style>
+body {
+  background-color: #88B28E;
+  font-weight:bold;
+  font-family: 'Rajdhani', sans-serif;
+  color: #C9E6F1;
+}
+#title {
+  width: 500px;
+  height: 150px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin: -75px 0 0 -250px;
+  border-style:solid;
+  border-color: #C9E6F1;
+  text-align:center;
+  line-height:150px;
+  font-size: 36;
+}
+
+#input {
+  width: 600px;
+  height: 150px;
+  position: absolute;
+  top: 65%;
+  left: 60%;
+  margin: -75px 0 0 -300px;
+  line-height:100px;
+  font-size: 36;
+  color: #C9E6F1;
+}
+
+#submit {
+  width: 120px;
+  height: 60px;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  margin: -30px 0 0 -60px;
+  border-style:solid;
+  border-color: #C9E6F1;
+  text-align:center;
+  line-height:60px;
+  font-size: 28;
+}
+
+
+input[type=text] {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid #C9E6F1;
+  font-size: 30;
+}
+</style>
+<link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
 </head>
 
 <body>
-<h1>hello</h1>
+  <div id='title'>
+    STREAM CHATROOM
+  </div>
+  <div id='input'>
+    URL: <input id='url' type="text" style='color:#C9E6F1'><br>
+  </div>
+  <div id='submit' onclick="submit()">
+    START
+  </div>
 </body>

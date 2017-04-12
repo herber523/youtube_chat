@@ -31,13 +31,21 @@
       </div>
       <div class="header drag">a</div>
     </div>
-
-    <webview id="webview" src="https://www.youtube.com/live_chat?is_popout=1&v=GRUO2GkzNOE"></webview>
+    <div id='wv'>
+      
+    </div>
 
 
   </body>
+    <script>
+      var remote = require('electron').remote;
+      var url = remote.getGlobal('info').url;  
+      var target = document.querySelector('body');
+      var wv = "<webview id='webview' src="+url+"></webview>";
 
-  <script>
+      target.innerHTML += "<webview id='webview' src="+url+"></webview>";
+    </script>
+    <script>
   var webview = document.querySelector('webview');
   const fs = require('fs')
   webview.addEventListener("dom-ready", function(){
@@ -51,11 +59,12 @@
   });
 
 
-  const remote = require('electron').remote;
   document.getElementById("close-btn").addEventListener("click", function (e) {
        var window = remote.getCurrentWindow();
        window.close();
   });
+
+  console.log(remote.getGlobal('sharedObj').prop1); 
   </script>
 
 </html>
