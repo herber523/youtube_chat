@@ -1,0 +1,13 @@
+<haed>
+<script>
+  const remote = require('electron').remote;
+  const BrowserWindow = remote.BrowserWindow;
+  mainWindow = new BrowserWindow({width: 250, height: 400, transparent:true,frame:false});
+  mainWindow.setAlwaysOnTop(true)
+  mainWindow.loadURL('file://' + __dirname + '/chat.html');
+</script>
+</head>
+
+<body>
+<h1>hello</h1>
+</body>

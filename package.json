@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "electron-prebuilt": "^1.4.13"
+  }
+}
