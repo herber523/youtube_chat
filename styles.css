@@ -1,29 +1,25 @@
-@import url("https://fonts.googleapis.com/css?family=Changa One");
-@import url("https://fonts.googleapis.com/css?family=Imprima");
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+
 
 /* Background colors*/
 body {
-  background-color: rgba(0,0,0,0.4);
-  -webkit-user-select: none;
-  -webkit-app-region: drag;
+  background-color: rgba(0,0,0,0.49);
 }
 
 
 
-#menu {
-  pointer-events: none;
-  cursor: default;
-}
+
 /* Transparent background. */
 yt-live-chat-renderer {
   background-color: transparent !important;
 }
+
 /* Outlines */
 yt-live-chat-renderer * {
-  text-shadow: -2px -2px #000000,-2px -1px #000000,-2px 0px #000000,-2px 1px #000000,-2px 2px #000000,-1px -2px #000000,-1px -1px #000000,-1px 0px #000000,-1px 1px #000000,-1px 2px #000000,0px -2px #000000,0px -1px #000000,0px 0px #000000,0px 1px #000000,0px 2px #000000,1px -2px #000000,1px -1px #000000,1px 0px #000000,1px 1px #000000,1px 2px #000000,2px -2px #000000,2px -1px #000000,2px 0px #000000,2px 1px #000000,2px 2px #000000;
-  font-family: "Imprima";
-  font-size: 14px !important;
-  line-height: 14px !important;
+
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 15px !important;
+  line-height: 15px !important;
 }
 
 yt-live-chat-text-message-renderer #content,
@@ -63,10 +59,10 @@ yt-live-chat-text-message-renderer #author-photo,
 yt-live-chat-paid-message-renderer #author-photo,
 yt-live-chat-legacy-paid-message-renderer #author-photo {
 
-  width: 24px !important;
-  height: 24px !important;
-  border-radius: 24px !important;
-  margin-right: 6px !important;
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 22px !important;
+  margin-right: 5.5px !important;
 }
 
 /* Hide badges. */
@@ -79,9 +75,9 @@ yt-live-chat-text-message-renderer #author-badges {
 yt-live-chat-text-message-renderer #timestamp {
 
   color: #999999 !important;
-  font-family: "Imprima";
-  font-size: 16px !important;
-  line-height: 16px !important;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 15px !important;
+  line-height: 15px !important;
 }
 
 /* Badges. */
@@ -102,24 +98,24 @@ yt-live-chat-text-message-renderer yt-live-chat-author-badge-renderer[type="memb
 
 /* Channel names. */
 yt-live-chat-text-message-renderer #author-name {
-  color: #cccccc !important;
-  font-family: "Changa One";
-  font-size: 20px !important;
-  line-height: 20px !important;
+  color: #dcefdc !important;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 15px !important;
+  line-height: 15px !important;
 }
 
 yt-live-chat-text-message-renderer #author-name::after {
   content: ":";
-  margin-left: 2px;
+  margin-left: 1px;
 }
 
 /* Messages. */
 yt-live-chat-text-message-renderer #message,
 yt-live-chat-text-message-renderer #message * {
   color: #ffffff !important;
-  font-family: "Imprima";
-  font-size: 18px !important;
-  line-height: 18px !important;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 15px !important;
+  line-height: 15px !important;
 }
 
 
@@ -129,9 +125,9 @@ yt-live-chat-paid-message-renderer #author-name *,
 yt-live-chat-legacy-paid-message-renderer #event-text,
 yt-live-chat-legacy-paid-message-renderer #event-text * {
   color: #ffffff !important;
-  font-family: "Changa One";
-  font-size: 20px !important;
-  line-height: 20px !important;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 18px !important;
+  line-height: 18px !important;
 }
 
 yt-live-chat-paid-message-renderer #purchase-amount,
@@ -139,17 +135,17 @@ yt-live-chat-paid-message-renderer #purchase-amount *,
 yt-live-chat-legacy-paid-message-renderer #detail-text,
 yt-live-chat-legacy-paid-message-renderer #detail-text * {
   color: #ffffff !important;
-  font-family: "Imprima";
-  font-size: 18px !important;
-  line-height: 18px !important;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 16px !important;
+  line-height: 16px !important;
 }
 
 yt-live-chat-paid-message-renderer #content,
 yt-live-chat-paid-message-renderer #content * {
   color: #ffffff !important;
-  font-family: "Imprima";
-  font-size: 18px !important;
-  line-height: 18px !important;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 16px !important;
+  line-height: 16px !important;
 }
 
 yt-live-chat-paid-message-renderer {
@@ -185,5 +181,5 @@ yt-live-chat-ticker-paid-message-item-renderer *,
 yt-live-chat-ticker-sponsor-item-renderer,
 yt-live-chat-ticker-sponsor-item-renderer * {
   color: #ffffff !important;
-  font-family: "Imprima";
+  font-family: 'Noto Sans TC', sans-serif;
 }
