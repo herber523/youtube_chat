@@ -1,1 +1,6 @@
-"# youtube_chat" 
+# youtube chat
+
+```bash
+yarn
+yarn start
+```
