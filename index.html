@@ -1,33 +1,34 @@
 <haed>
+<link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
 <script>
-function submit() {
-  var url = document.getElementById("url").value;
-  if(url == ''){
-    alert('url error');
+  function submit() {
+    var url = document.getElementById("url").value;
+    if(url == ''){
+      alert('url error');
+    }
+    else{
+      url = url.split("=")[1];
+      url = "https://www.youtube.com/live_chat?v="+url+"&is_popout=1"
+      const remote = require('electron').remote;
+      remote.getGlobal('info').url = url;
+      const BrowserWindow = remote.BrowserWindow;
+      mainWindow = new BrowserWindow({width: 250, height: 400, transparent:true,frame:false});
+      mainWindow.setAlwaysOnTop(true)
+      //mainWindow.webContents.openDevTools()
+      mainWindow.loadURL('file://' + __dirname + '/chat.html');
+      var window = remote.getCurrentWindow();
+      window.close();
+    }
   }
-  else{
-    url = url.split("=")[1];
-    url = "https://www.youtube.com/live_chat?v="+url+"&is_popout=1"
-    const remote = require('electron').remote;
-    remote.getGlobal('info').url = url;
-    const BrowserWindow = remote.BrowserWindow;
-    mainWindow = new BrowserWindow({width: 250, height: 400, transparent:true,frame:false});
-    mainWindow.setAlwaysOnTop(true)
-    //mainWindow.webContents.openDevTools()
-    mainWindow.loadURL('file://' + __dirname + '/chat.html');
-    var window = remote.getCurrentWindow();
-    window.close();
-  }
-}
 </script>
 <style>
-body {
+  body {
   background-color: #88B28E;
   font-weight:bold;
   font-family: 'Rajdhani', sans-serif;
   color: #C9E6F1;
-}
-#title {
+  }
+  #title {
   width: 500px;
   height: 150px;
   position: absolute;
@@ -39,9 +40,8 @@ body {
   text-align:center;
   line-height:150px;
   font-size: 36;
-}
-
-#input {
+  }
+  #input {
   width: 600px;
   height: 150px;
   position: absolute;
@@ -51,9 +51,8 @@ body {
   line-height:100px;
   font-size: 36;
   color: #C9E6F1;
-}
-
-#submit {
+  }
+  #submit {
   width: 120px;
   height: 60px;
   position: absolute;
@@ -65,20 +64,16 @@ body {
   text-align:center;
   line-height:60px;
   font-size: 28;
-}
-
-
-input[type=text] {
+  }
+  input[type=text] {
   border: 0;
   outline: 0;
   background: transparent;
   border-bottom: 2px solid #C9E6F1;
   font-size: 30;
-}
+  }
 </style>
-<link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
 </head>
-
 <body>
   <div id='title'>
     STREAM CHATROOM

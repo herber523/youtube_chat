@@ -5,23 +5,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       body {
-        overflow:hidden;
+      overflow:hidden;
       }
       .header{
-        display:inline;
-        background-color:rgba(0,0,0,0.6)
+      display:inline;
+      background-color:rgba(0,0,0,0.6)
       }
       .drag{
-        width:100%;
-        position: absolute;
-        -webkit-app-region: drag
+      width:100%;
+      position: absolute;
+      -webkit-app-region: drag
       }
       webview{
-        position:absolute;
-        width:100%;
-        height:100%;
+      position:absolute;
+      width:100%;
+      height:100%;
       }
-
     </style>
   </head>
   <body>
@@ -31,40 +30,32 @@
       </div>
       <div class="header drag">a</div>
     </div>
-    <div id='wv'>
-      
-    </div>
-
-
   </body>
-    <script>
-      var remote = require('electron').remote;
-      var url = remote.getGlobal('info').url;  
-      var target = document.querySelector('body');
-      var wv = "<webview id='webview' src="+url+"></webview>";
+  <script>
+    var remote = require('electron').remote;
+    var url = remote.getGlobal('info').url;
+    var target = document.querySelector('body');
+    var wv = "<webview id='webview' src="+url+"></webview>";
 
-      target.innerHTML += "<webview id='webview' src="+url+"></webview>";
-    </script>
-    <script>
-  var webview = document.querySelector('webview');
-  const fs = require('fs')
-  webview.addEventListener("dom-ready", function(){
-    fs.readFile(__dirname+ '/styles.css', "utf-8", function(error, data) {
-      if(!error){
-        var formatedData = data.replace(/\s{2,10}/g, ' ').trim()
-          webview.insertCSS(formatedData);
-      }
-     })
-
-  });
-
-
-  document.getElementById("close-btn").addEventListener("click", function (e) {
-       var window = remote.getCurrentWindow();
-       window.close();
-  });
-
-  console.log(remote.getGlobal('sharedObj').prop1); 
+    target.innerHTML += "<webview id='webview' src="+url+"></webview>";
   </script>
+  <script>
+    var webview = document.querySelector('webview');
+    const fs = require('fs')
+    webview.addEventListener("dom-ready", function(){
+      fs.readFile(__dirname+ '/styles.css', "utf-8", function(error, data) {
+        if(!error){
+          var formatedData = data.replace(/\s{2,10}/g, ' ').trim()
+            webview.insertCSS(formatedData);
+        }
+       })
 
+    });
+
+
+    document.getElementById("close-btn").addEventListener("click", function (e) {
+         var window = remote.getCurrentWindow();
+         window.close();
+    });
+  </script>
 </html>
